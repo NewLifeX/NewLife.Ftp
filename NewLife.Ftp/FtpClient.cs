@@ -34,8 +34,8 @@ namespace NewLife.Ftp
         /// <summary>获取或设置一个 Boolean 值，该值指定文件传输的数据类型。</summary>
         public Boolean UseBinary { get; set; }
 
-        /// <summary>获取或设置客户端应用程序的数据传输过程的行为。</summary>
-        public Boolean UsePassive { get; set; }
+        /// <summary>获取或设置客户端应用程序的数据传输过程的行为。（默认：true）</summary>
+        public Boolean UsePassive { get; set; } = true;
 
         /// <summary>本地请求对象</summary>
         public FtpWebRequest LocalRequest { get; set; }
@@ -245,7 +245,6 @@ namespace NewLife.Ftp
                             } while (dataRead >= buffer.Length);
                             rs.Close();
                         }
-
                     }
                     finally
                     {
