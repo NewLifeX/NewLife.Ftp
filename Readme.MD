@@ -1,4 +1,11 @@
-﻿## Ftp操作组件
+﻿# NewLife.Ftp - Ftp客户端组件
+
+![GitHub top language](https://img.shields.io/github/languages/top/newlifex/newlife.ftp?logo=github)
+![GitHub License](https://img.shields.io/github/license/newlifex/newlife.ftp?logo=github)
+![Nuget Downloads](https://img.shields.io/nuget/dt/newlife.ftp?logo=nuget)
+![Nuget](https://img.shields.io/nuget/v/newlife.ftp?logo=nuget)
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/newlife.ftp?label=dev%20nuget&logo=nuget)
+
 NewLife.Ftp 是一个2008年写的Ftp操作组件，至今已有10年历史。  
 当时设计这个系统的目的是备份金融公司各个业务系统的数据库到异地机房，目标系统有Windows、Linux、Unix。  
 
