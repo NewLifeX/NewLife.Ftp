@@ -31,8 +31,8 @@ public class FtpClient
     /// <summary>获取或设置一个 Boolean 值，该值指定文件传输的数据类型。</summary>
     public Boolean UseBinary { get; set; }
 
-    /// <summary>获取或设置客户端应用程序的数据传输过程的行为。</summary>
-    public Boolean UsePassive { get; set; }
+        /// <summary>获取或设置客户端应用程序的数据传输过程的行为。（默认：true）</summary>
+        public Boolean UsePassive { get; set; } = true;
 
     private FtpDirectory _Root;
     /// <summary>根</summary>
@@ -225,33 +225,32 @@ public class FtpClient
                         fs.Position = size2;
                     }
 
-                    using (var rs = ftp.GetRequestStream())
-                    {
-                        Int32 dataRead;
-                        do
+                        using (var rs = ftp.GetRequestStream())
                         {
-                            dataRead = fs.Read(buffer, 0, buffer.Length);
-                            size += dataRead;
-                            rs.Write(buffer, 0, dataRead);
-                        } while (dataRead >= buffer.Length);
-                        rs.Close();
+                            Int32 dataRead;
+                            do
+                            {
+                                dataRead = fs.Read(buffer, 0, buffer.Length);
+                                size += dataRead;
+                                rs.Write(buffer, 0, dataRead);
+                            } while (dataRead >= buffer.Length);
+                            rs.Close();
+                        }
                     }
-
+                    finally
+                    {
+                        fs.Close();
+                    }
                 }
-                finally
-                {
-                    fs.Close();
-                }
+                e.DesSize = size;
+                return size;
+                #endregion
             }
-            e.DesSize = size;
-            return size;
-            #endregion
+            finally
+            {
+                OnUploadFileFinished?.Invoke(this, e);
+            }
         }
-        finally
-        {
-            OnUploadFileFinished?.Invoke(this, e);
-        }
-    }
 
     /// <summary>
     /// 上传目录
