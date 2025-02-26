@@ -5,7 +5,7 @@
     <AssemblyTitle>FTP客户端</AssemblyTitle>
     <Description>纯托管轻量级Ftp客户端</Description>
     <Company>新生命开发团队</Company>
-    <Copyright>版权所有(C) 新生命开发团队 2002~2022</Copyright>
+    <Copyright>版权所有(C) 新生命开发团队 2002~2025</Copyright>
     <VersionPrefix>1.1</VersionPrefix>
     <VersionSuffix>$([System.DateTime]::Now.ToString(`yyyy.MMdd`))</VersionSuffix>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
