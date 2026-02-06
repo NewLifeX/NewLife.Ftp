@@ -5,7 +5,7 @@
     <AssemblyTitle>FTP客户端</AssemblyTitle>
     <Description>纯托管轻量级Ftp客户端</Description>
     <Company>新生命开发团队</Company>
-    <Copyright>版权所有(C) 新生命开发团队 2002~2025</Copyright>
+    <Copyright>版权所有(C) 新生命开发团队 2002~2026</Copyright>
     <VersionPrefix>1.1</VersionPrefix>
     <VersionSuffix>$([System.DateTime]::Now.ToString(`yyyy.MMdd`))</VersionSuffix>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -34,18 +34,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="NewLife.Core" Version="10.10.2024.902" />
+    <PackageReference Include="NewLife.Core" Version="11.11.2026.201" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'!='netstandard2.1'">
-    <PackageReference Include="NewLife.Core" Version="8.11.2022.1225" />
+    <PackageReference Include="NewLife.Core" Version="11.11.2026.201" />
   </ItemGroup>
 
   <ItemGroup>
